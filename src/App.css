@@ -1,3 +1,7 @@
+body{
+  background-color: #1b262d;
+  color: #c2f000;
+}
 .App {
   text-align: center;
 }
@@ -36,3 +40,40 @@
     transform: rotate(360deg);
   }
 }
+
+
+.column-input-button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  margin: 1em auto;
+}
+
+.input-text-box{
+  -webkit-border-radius: 10px 10px;
+  padding: 5px;
+  font-family: monaco,Consolas,"Lucida Console",monospace;
+  font-size: larger;
+}
+
+.cool-button {
+  width: 242px;
+  background: transparent;
+  margin: 1rem auto;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: #ffffe3;
+  border: 2px solid #335067;
+  padding: 10px 14px;
+  border-radius: 4px;
+  transition: background 0.1s;
+}
+
+.cool-button:hover {
+  -webkit-border-radius: 10px 10px;
+  background: #243a4a;
+}
+
