@@ -9,22 +9,25 @@ public class main {
         Gson gson = new Gson();
 
         port(4000);
-        get("/getItems", (req, res) -> {
-         return gson.toJson(new ItemsDAO().getItems());
-        });
+        path("/api", () -> {
+            get("/getItems", (req, res) -> {
+                System.out.println("/getItems");
+                return gson.toJson(new ItemsDAO().getItems());
+            });
 
-        post("/addItem", (req, res) -> {
-            ItemListDTO item = gson.fromJson(req.body(), ItemListDTO.class);
+            post("/addItem", (req, res) -> {
+                ItemListDTO item = gson.fromJson(req.body(), ItemListDTO.class);
 
-            System.out.println(item.item);
-            return gson.toJson(new ItemsDAO().addItem(item.item));
-        });
+                System.out.println(item.item);
+                return gson.toJson(new ItemsDAO().addItem(item.item));
+            });
 
-        post("/removeItem", (req, res) -> {
-            ItemListDTO item = gson.fromJson(req.body(), ItemListDTO.class);
+            post("/removeItem", (req, res) -> {
+                ItemListDTO item = gson.fromJson(req.body(), ItemListDTO.class);
 
-            System.out.println(item.item);
-            return gson.toJson(new ItemsDAO().removeItem(item.item));
+                System.out.println(item.item);
+                return gson.toJson(new ItemsDAO().removeItem(item.item));
+            });
         });
 
     }
